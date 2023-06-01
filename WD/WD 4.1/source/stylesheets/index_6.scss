@@ -1,0 +1,13 @@
+$width: 800px;
+
+.container{
+    width: $width;
+}
+
+.column-half{
+    width: calc($width / 2);
+}
+
+.column-fifth{
+    width: calc($width / 5);
+}
