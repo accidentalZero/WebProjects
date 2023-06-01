@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS4.4</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+</head>
+<body>
+    <script type="text/babel"> 
+        function Hello() {
+            return <h2>Это компонент, определенный функционально</h2>;
+        }
+        ReactDOM.render(
+            <Hello />,
+            document.getElementById("func")
+        )
+    </script>
+    <script type="text/babel"> 
+        class Hello extends React.Component {
+            render() {
+                return <h2>Это компонент, определенный с помощью ES6 классов</h2>;
+            }
+        }
+
+        ReactDOM.render(
+            <Hello />,
+            document.getElementById("cls")
+        )               
+   </script>
+   <script type="text/babel">
+        const Hello = () => {
+            return(<h2>Это компонент, определенный с помощью стрелочной функции</h2>);
+        }
+
+        ReactDOM.render(
+            <Hello />,
+            document.getElementById("arw")
+        ) 
+   </script>
+   <div id="func"></div> 
+   <div id="cls"></div>   
+   <div id="arw"></div>
+   <script type="text/babel">
+   class Timer extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = { seconds: 0 };
+    }
+  
+    tick() {
+      this.setState(state => ({
+        seconds: state.seconds + 1
+      }));
+    }
+  
+    componentDidMount() {
+      this.interval = setInterval(() => this.tick(), 1000);
+    }
+  
+    componentWillUnmount() {
+      clearInterval(this.interval);
+    }
+  
+    render() {
+      return (
+        <div>
+          Seconds: {this.state.seconds}
+        </div>
+      );
+    }
+  }
+  
+  ReactDOM.render(
+    <Timer />,
+    document.getElementById('timer-example')
+  );
+  </script>
+  <div id="timer-example"></div>
+  <script type="text/babel">
+    const sampleClassName = "custom-component";
+    const styleObj = {
+        color:'green', 
+        fontFamily:'Times'
+    }; 
+    
+    ReactDOM.render(
+        <div className={sampleClassName}  style={styleObj}>
+        <p>Дополнительный компонент</p>
+        <p>с измененным стилем</p>
+        </div>,
+        document.getElementById("custom")
+    )
+</script>
+<div id="custom"></div>
+</body>
+</html> 
