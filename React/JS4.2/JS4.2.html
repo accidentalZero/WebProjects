@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 4.2</title>
+</head>
+<body>
+    <div id="test">
+        <!-- This div's content will be managed by React. -->
+    </div>
+    <!-- Загрузка компонента React. -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script type="text/babel">
+        const root = ReactDOM.createRoot(document.getElementById('test'));
+        const element = <h1>Привет, мир!</h1>;
+        root.render(element);
+    </script>    
+</body>
+</html>
