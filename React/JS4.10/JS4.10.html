@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>4.10</title>
+    <style>
+        button{
+            width: 160px;
+            height:40px;
+            border-radius: 4px;            
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <div id="age"></div>
+    <div id="fruit"></div>
+    <div id="tasks"></div>
+        
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+        
+    <script type="text/babel">
+        
+    function App() {
+        const [count, setCount] = React.useState(0);
+        
+        return (
+            <div>
+                <p>Вы нажали {count} раз</p>
+                <button onClick={() => setCount(count + 1)}>
+                    Нажми на меня
+                </button>
+            </div>            
+        );
+    }
+
+    function Age() {
+        const [age, setAge] = React.useState(24);
+        
+        return (
+            <div>
+                <p>В {2023 + age - 24} году мне исполнится {age} лет/года</p>
+                <button onClick={() => setAge(age + 1)}>
+                    Год вперед!
+                </button>
+            </div>            
+        );
+    }
+
+    function Fruits() {
+        const [fruit, setFruit] = React.useState('Яблоко');
+
+        return (
+            <div>
+                <p>В качестве фрутка было задано: {fruit}</p>
+                <button onClick={() => setFruit('БАНАН!')}>
+                    Не хочу {fruit}
+                </button>
+            </div>
+            
+        );
+    }
+
+    function Tasks() {
+        let tasks = new Array('Посмотреть задания', 'Составить план решения', 
+        'Приступить к решению', 'Сдать все работы!');
+        const [todos, setTodos] = React.useState(0);
+
+        return (
+            <div>
+                <p>Текущая задача:  {tasks[todos]}</p>
+                <button onClick={() => setTodos(todos + 1)}>
+                    Следующая задача!
+                </button>
+            </div>
+            
+        );
+    }
+
+    ReactDOM.render(React.createElement(App), document.getElementById('app'))
+    ReactDOM.render(React.createElement(Age), document.getElementById('age'))
+    ReactDOM.render(React.createElement(Fruits), document.getElementById('fruit'))
+    ReactDOM.render(React.createElement(Tasks), document.getElementById('tasks'))
+    </script>
+</body>
+</html>
