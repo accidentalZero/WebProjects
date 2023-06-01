@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+<script>
+    // Задание №1
+    function showMessage(){
+        let message = "Привет, я JavaScript!"; // локальная переменная
+        alert( message );
+    }
+    showMessage(); // Привет, я JavaScript!
+    //alert(message); // Произойдет ошибка, так как переменная message объялена в области видимсоти функции
+    // Задание №2
+    function palindrome(str){
+        let reverse = Array.from(str).reverse().join('');
+        if(str.toLowerCase() == reverse.toLowerCase()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    alert(palindrome('дед'));
+    alert(palindrome('олге'));
+    // Задание №3
+    function negativeToSqr(arr){
+        for(let i = 0; i < arr.length; i++){
+            if(arr[i] < 0){
+                arr[i] = arr[i] * arr[i];
+            }
+        }
+        return arr;
+    }    
+    res_arr = negativeToSqr([1, 2, 3, 4,-2, -4, -3, 4, 5, 2]);
+    alert(res_arr.toString());
+    // Задание №4
+    
+  
+</script>
